@@ -1,0 +1,30 @@
+<footer id="kontakt" class="site-footer">
+    <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+            {% include 'includes/logo.html' %}
+            <p class="site-footer__copy">&copy; {% now "Y" %} Luen Pro. Sva prava zadržana.</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Footer navigacija">
+            <ul>
+                <li><a href="{% url 'website:home' %}#pocetna">Početna</a></li>
+                <li><a href="{% url 'website:home' %}#o-nama">O nama</a></li>
+                <li><a href="{% url 'website:home' %}#kontakt">Kontakt</a></li>
+                <li><a href="{% url 'website:home' %}#faq">FAQ</a></li>
+                <li><a href="{% url 'website:home' %}#usluge">Usluge</a></li>
+            </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="App navigacija">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'portal:dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'portal:logout' %}">Odjava</a></li>
+                {% else %}
+                    <li><a href="{% url 'portal:login' %}">Prijava</a></li>
+                {% endif %}
+                <li><a href="/admin/">Admin</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>

@@ -1,0 +1,13 @@
+{% load static i18n %}
+<footer class="site-end">
+  <div class="site-end__inner">
+    <p class="site-end__copy">&copy; {% now "Y" %} Luen Pro</p>
+    <nav class="site-end__nav" aria-label="{% translate 'Dodatni linkovi' %}">
+      {% if user.is_authenticated %}
+        <a href="{% url 'portal:dashboard' %}">{% translate 'App' %}</a>
+      {% else %}
+        <a class="site-end__login" href="{% url 'portal:login' %}">{% translate 'Prijava' %}</a>
+      {% endif %}
+    </nav>
+  </div>
+</footer>

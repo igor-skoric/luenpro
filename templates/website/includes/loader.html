@@ -1,0 +1,14 @@
+{% load static i18n %}
+<div class="site-loader" id="site-loader" role="status" aria-live="polite" aria-label="{% translate 'Učitavanje' %}">
+  <div class="site-loader__panel">
+    <img class="site-loader__logo" src="{% static 'img/logo.png' %}" width="940" height="220" alt="Luen Pro">
+    <ol class="site-loader__list">
+      <li>{% translate 'ORGANIZACIJE DOGAĐAJA' %}</li>
+      <li>{% translate 'IN STORE PROMOCIJE' %}</li>
+      <li>{% translate 'KREATIVNA REŠENJA' %}</li>
+      <li>{% translate 'DIGITALNI MARKETING' %}</li>
+      <li>{% translate 'PRODUKCIJA' %}</li>
+    </ol>
+    <div class="site-loader__track" aria-hidden="true"><span></span></div>
+  </div>
+</div>

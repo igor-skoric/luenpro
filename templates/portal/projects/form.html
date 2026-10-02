@@ -1,0 +1,171 @@
+{% extends 'portal/base_app.html' %}
+
+{% block title %}{{ page_title }} — Luen Pro App{% endblock %}
+{% block topbar_title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<section class="portal-form-page">
+    <div class="portal-toolbar">
+        <div>
+            <h1>{{ page_title }}</h1>
+            <p>Srpski i engleski se unose na istoj formi. Možete dodati više slika.</p>
+        </div>
+        <a class="btn btn--outline" href="{% url 'portal:project_list' %}">Nazad</a>
+    </div>
+
+    <div class="portal-form-layout{% if project %} portal-form-layout--edit{% endif %}">
+        <form method="post" enctype="multipart/form-data" class="portal-form" novalidate id="project-form">
+            {% csrf_token %}
+            <input type="hidden" name="action" value="save">
+
+            {% if form.non_field_errors %}
+                <div class="portal-auth__error">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            <div class="portal-form__section">
+                <h2 class="portal-form__section-title">Osnovni podaci</h2>
+                <div class="portal-lang-grid">
+                    <div class="portal-lang-block">
+                        <h3>Srpski</h3>
+                        <div class="portal-form__field">
+                            <label for="{{ form.title.id_for_label }}">{{ form.title.label }}</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}<p class="field-error">{{ form.title.errors|striptags }}</p>{% endif %}
+                        </div>
+                        <div class="portal-form__field">
+                            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                            {{ form.description }}
+                            {% if form.description.errors %}<p class="field-error">{{ form.description.errors|striptags }}</p>{% endif %}
+                        </div>
+                    </div>
+                    <div class="portal-lang-block">
+                        <h3>English</h3>
+                        <div class="portal-form__field">
+                            <label for="{{ form.title_en.id_for_label }}">{{ form.title_en.label }}</label>
+                            {{ form.title_en }}
+                            {% if form.title_en.errors %}<p class="field-error">{{ form.title_en.errors|striptags }}</p>{% endif %}
+                        </div>
+                        <div class="portal-form__field">
+                            <label for="{{ form.description_en.id_for_label }}">{{ form.description_en.label }}</label>
+                            {{ form.description_en }}
+                            {% if form.description_en.errors %}<p class="field-error">{{ form.description_en.errors|striptags }}</p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portal-form__section">
+                <h2 class="portal-form__section-title">Slike</h2>
+
+                {% if form.image %}
+                <div class="portal-form__field">
+                    <label for="{{ form.image.id_for_label }}">{{ form.image.label }}</label>
+                    <p class="field-help">Prikazuje se na kartici projekta na sajtu.</p>
+                    <label class="file-drop" for="{{ form.image.id_for_label }}">
+                        {{ form.image }}
+                        <span class="file-drop__icon" aria-hidden="true">↑</span>
+                        <span class="file-drop__title">Izaberi glavnu sliku</span>
+                        <span class="file-drop__meta" data-file-label>JPG, PNG ili WebP</span>
+                    </label>
+                    {% if form.image.errors %}<p class="field-error">{{ form.image.errors|striptags }}</p>{% endif %}
+                </div>
+                {% endif %}
+
+                <div class="portal-form__field">
+                    <label for="{{ form.gallery.id_for_label }}">{{ form.gallery.label }}</label>
+                    <p class="field-help">Možete izabrati više fajlova odjednom.</p>
+                    <label class="file-drop file-drop--multi" for="{{ form.gallery.id_for_label }}">
+                        {{ form.gallery }}
+                        <span class="file-drop__icon" aria-hidden="true">＋</span>
+                        <span class="file-drop__title">Dodaj slike u galeriju</span>
+                        <span class="file-drop__meta" data-file-label>Klikni ili prevuci fajlove ovde</span>
+                    </label>
+                    {% if form.gallery.errors %}<p class="field-error">{{ form.gallery.errors|striptags }}</p>{% endif %}
+                </div>
+            </div>
+
+            <div class="portal-form__section portal-form__section--footer">
+                <label class="portal-form__check" for="{{ form.is_published.id_for_label }}">
+                    {{ form.is_published }}
+                    <span>
+                        <strong>{{ form.is_published.label }}</strong>
+                        <small>Ako nije uključeno, projekat ostaje kao skica.</small>
+                    </span>
+                </label>
+                {% if form.is_published.errors %}<p class="field-error">{{ form.is_published.errors|striptags }}</p>{% endif %}
+
+                <div class="portal-form__actions">
+                    <button type="submit" class="btn btn--primary">{{ submit_label }}</button>
+                </div>
+            </div>
+        </form>
+
+        {% if project %}
+        <aside class="project-images-panel">
+            <div class="portal-toolbar portal-toolbar--compact">
+                <div>
+                    <h2>Galerija ({{ project.images.count }})</h2>
+                    <p>Glavna slika i dodatne fotografije.</p>
+                </div>
+            </div>
+
+            {% if project.images.all %}
+            <div class="project-images-grid">
+                {% for image in project.images.all %}
+                <article class="project-image-card{% if image.is_main %} is-main{% endif %}">
+                    <img src="{{ image.image.url }}" alt="" loading="lazy">
+                    <div class="project-image-card__meta">
+                        {% if image.is_main %}
+                            <span class="status-pill status-pill--approved">Glavna</span>
+                        {% else %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="set_main">
+                                <input type="hidden" name="image_id" value="{{ image.pk }}">
+                                <button type="submit" class="btn btn--outline btn--small">Glavna</button>
+                            </form>
+                        {% endif %}
+                        <form method="post" onsubmit="return confirm('Obrisati ovu sliku?');">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="delete_image">
+                            <input type="hidden" name="image_id" value="{{ image.pk }}">
+                            <button type="submit" class="link-danger">Obriši</button>
+                        </form>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+                <p class="muted">Još nema sačuvanih slika. Dodajte ih levo i sačuvajte.</p>
+            {% endif %}
+        </aside>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(() => {
+  document.querySelectorAll('.file-drop').forEach(drop => {
+    const input = drop.querySelector('input[type="file"]');
+    const label = drop.querySelector('[data-file-label]');
+    if (!input || !label) return;
+    const fallback = label.textContent;
+    const update = () => {
+      const files = Array.from(input.files || []);
+      if (!files.length) {
+        label.textContent = fallback;
+        drop.classList.remove('has-files');
+        return;
+      }
+      drop.classList.add('has-files');
+      label.textContent = files.length === 1
+        ? files[0].name
+        : `${files.length} fajla izabrano`;
+    };
+    input.addEventListener('change', update);
+  });
+})();
+</script>
+{% endblock %}

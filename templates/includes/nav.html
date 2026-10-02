@@ -1,0 +1,18 @@
+<header class="site-header">
+    <div class="container site-header__inner">
+        {% include 'includes/logo.html' %}
+
+        <nav class="site-nav" aria-label="Glavna navigacija">
+            <ul class="site-nav__list">
+                <li><a href="{% url 'website:home' %}#pocetna" data-nav="pocetna">Početna</a></li>
+                <li><a href="{% url 'website:home' %}#o-nama" data-nav="o-nama">O nama</a></li>
+                <li><a href="{% url 'website:home' %}#kontakt" data-nav="kontakt">Kontakt</a></li>
+                <li><a href="{% url 'website:home' %}#faq" data-nav="faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="site-header__actions">
+            <a href="{% url 'website:home' %}#usluge" class="btn btn--outline btn--nav" data-nav="usluge">Usluge</a>
+        </div>
+    </div>
+</header>

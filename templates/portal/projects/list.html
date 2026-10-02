@@ -1,0 +1,112 @@
+{% extends 'portal/base_app.html' %}
+{% load i18n %}
+
+{% block title %}Projekti — Luen Pro App{% endblock %}
+{% block topbar_title %}Projekti{% endblock %}
+
+{% block content %}
+<section class="portal-projects">
+    <div class="portal-toolbar">
+        <div>
+            <h1>Projekti</h1>
+            <p>Srpski i engleski se unose na istoj formi.</p>
+        </div>
+        <a class="btn btn--primary" href="{% url 'portal:project_create' %}">+ Novi projekat</a>
+    </div>
+
+    {% if projects %}
+    <div class="project-admin-table-wrap">
+        <table class="project-admin-table">
+            <thead>
+                <tr>
+                    <th>Slika</th>
+                    <th>Naziv</th>
+                    <th>Opis</th>
+                    <th>Slike</th>
+                    <th>Engleski</th>
+                    <th>Status</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for project in projects %}
+                {% with sr=project.sr_translation en=project.en_translation main=project.main_image %}
+                <tr class="project-admin-row" data-href="{% url 'portal:project_edit' project.pk %}" tabindex="0">
+                    <td>
+                        {% if main %}
+                            <img src="{{ main.image.url }}" alt="" class="project-admin-thumb" width="72" height="54">
+                        {% else %}
+                            <span class="muted">—</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ sr.title|default:"—" }}</td>
+                    <td class="project-admin-desc">{{ sr.description|default:"—" }}</td>
+                    <td>{{ project.images.all|length }}</td>
+                    <td>{{ en.title|default:"—" }}</td>
+                    <td>
+                        {% if project.is_published %}
+                            <span class="status-pill status-pill--approved">Objavljeno</span>
+                        {% else %}
+                            <span class="status-pill status-pill--draft">Skica</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form method="post" action="{% url 'portal:project_delete' project.pk %}" onsubmit="return confirm('Obrisati projekat?');">
+                            {% csrf_token %}
+                            <button type="submit" class="action-link action-link--danger">Obriši</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endwith %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if page_obj.paginator.num_pages > 1 %}
+    <nav class="pagination" aria-label="{% translate 'Stranice projekata' %}">
+        {% if page_obj.has_previous %}
+        <a class="pagination__step" href="?page={{ page_obj.previous_page_number }}" aria-label="{% translate 'Prethodna strana' %}">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14.5 6.5 8.5 12l6 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+            <span class="pagination__page is-current" aria-current="page">{{ num }}</span>
+            {% else %}
+            <a class="pagination__page" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a class="pagination__step" href="?page={{ page_obj.next_page_number }}" aria-label="{% translate 'Sledeća strana' %}">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9.5 6.5 15.5 12l-6 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        {% endif %}
+    </nav>
+    {% endif %}
+    {% else %}
+        <div class="portal-empty">
+            <p>Još nema projekata.</p>
+            <a class="btn btn--primary" href="{% url 'portal:project_create' %}">Dodaj prvi projekat</a>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(() => {
+  document.querySelectorAll('.project-admin-row').forEach(row => {
+    const open = () => { window.location.href = row.dataset.href; };
+    row.addEventListener('click', event => {
+      if (event.target.closest('form, button, a')) return;
+      open();
+    });
+    row.addEventListener('keydown', event => {
+      if (event.target !== row || event.key !== 'Enter') return;
+      event.preventDefault();
+      open();
+    });
+  });
+})();
+</script>
+{% endblock %}

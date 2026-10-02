@@ -1,0 +1,79 @@
+{% extends 'website/base.html' %}
+{% load static i18n %}
+
+{% block title %}{% translate 'Luen Pro | Kreativna marketing agencija' %}{% endblock %}
+
+{% block body_start %}
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute"><defs><filter id="client-monochrome" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -.2126 -.7152 -.0722 0 1"/><feComponentTransfer><feFuncA type="linear" slope="4" intercept="-.12"/></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"/></filter></defs></svg>
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="intro" aria-labelledby="title">
+    <h1 id="title" aria-label="{% translate 'Šta je to Luen Pro?' %}">
+      <span class="line" aria-hidden="true"><span class="word">{% translate 'ŠTA' context 'hero' %}</span> <span class="word">{% translate 'JE' context 'hero' %}</span> <span class="word">{% translate 'TO' context 'hero' %}</span></span>
+      <span class="line second" aria-hidden="true"><span class="word">LUEN</span> <span class="word orange">PRO<span class="question">?</span></span></span>
+    </h1>
+    <div class="answer">
+      <p class="lead">{% blocktranslate %}Zajednica umova<br class="desktop-break"> zaljubljenih u marketing.{% endblocktranslate %}</p>
+      <p class="description">{% translate 'Svaki brend ima svoj identitet, priču i specifičnost. Zato svakom klijentu pristupamo pojedinačno, pažljivo i maksimalno fokusirano.' %}</p>
+    </div>
+    <a class="project-link" href="{% url 'website:projekti' %}">{% translate 'POGLEDAJTE PROJEKTE' %} <span aria-hidden="true"><img src="{% static 'img/arrow-up-right.svg' %}" width="26" height="26" alt=""></span></a>
+  </section>
+
+  <section class="clients section reveal" aria-label="{% translate 'Klijenti' %}">
+    <div class="client-track">
+      <div class="client-group">
+        <img src="{% static 'img/clients/jti.png' %}" width="1577" height="1119" alt="JTI" loading="lazy">
+        <img src="{% static 'img/clients/asics.png' %}" width="5214" height="1735" alt="ASICS" loading="lazy">
+        <img src="{% static 'img/clients/unicredit.png' %}" width="3049" height="397" alt="UniCredit Bank" loading="lazy">
+        <img src="{% static 'img/clients/sava.png' %}" width="533" height="203" alt="Sava osiguranje" loading="lazy">
+        <img src="{% static 'img/clients/asw.webp' %}" width="368" height="127" alt="ASW" loading="lazy">
+        <img src="{% static 'img/clients/haier.webp' %}" width="285" height="103" alt="Haier" loading="lazy">
+        <img src="{% static 'img/clients/generali.webp' %}" width="256" height="220" alt="Generali" loading="lazy">
+        <img src="{% static 'img/clients/admiral.webp' %}" width="479" height="104" alt="Admiral" loading="lazy">
+        <img src="{% static 'img/clients/grand-casino-admiral.webp' %}" width="302" height="206" alt="Grand Casino Admiral" loading="lazy">
+        <img src="{% static 'img/clients/bojkovcanka.webp' %}" width="351" height="198" alt="Bojkovčanka" loading="lazy">
+        <img src="{% static 'img/clients/valvoline.webp' %}" width="454" height="95" alt="Valvoline" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="o-nama" class="about section reveal" aria-label="{% translate 'O nama' %}">
+    <p class="statement">{% blocktranslate %}Ono što mi radimo, i to radimo maksimalno fokusirani, vođeni nesputanom kreativnošću i s puno ljubavi, jesu <span>ORGANIZACIJE DOGAĐAJA, IN STORE PROMOCIJE, KREATIVNA REŠENJA, DIGITALNI MARKETING i PRODUKCIJA.</span>{% endblocktranslate %}</p>
+    <p class="about-detail">{% translate 'Smatramo da je ključ uspešno sprovedenih projekata koji su za nama činjenica da se trudimo da ne slušamo klijente - trudimo se da ih čujemo i razumemo njihove potrebe. Zato, ko god želi da njegov brend bude shvaćen - Luen Pro je mesto za to!' %}</p>
+  </section>
+
+  <section class="team section reveal" aria-labelledby="team-title">
+    <span class="eyebrow">{% translate 'NAŠ TIM' %}</span>
+    <h2 id="team-title">{% blocktranslate %}RAZLIČITE VEŠTINE.<br>ZAJEDNIČKA IDEJA.{% endblocktranslate %}</h2>
+    <p>{% translate 'Spajamo kreativnost, iskustvo i tehnologiju da bismo stvarali jedinstvena iskustva sa brendovima — u fizičkom i digitalnom svetu.' %}</p>
+    <ul>
+      <li>{% translate 'Kreativni tim' %}</li>
+      <li>{% translate 'Account sektor' %}</li>
+      <li>{% translate 'Promo sektor' %}</li>
+      <li>{% translate 'Produkcija' %}</li>
+      <li>{% translate 'Digitalni sektor' %}</li>
+    </ul>
+  </section>
+
+  <section id="usluge" class="services section" aria-labelledby="services-title">
+    <div class="services-heading reveal">
+      <span class="eyebrow">{% translate 'USLUGE' %}</span>
+      <h2 id="services-title">{% blocktranslate %}IDEJE PRETVARAMO<br>U <span>ISKUSTVA</span>{% endblocktranslate %}</h2>
+    </div>
+    <ol class="service-list">
+      <li class="reveal"><span class="number">01</span><h3>{% translate 'Brend strategija i razvoj identiteta' %}</h3></li>
+      <li class="reveal"><span class="number">02</span><h3>{% translate 'Produkcija' %}</h3></li>
+      <li class="reveal"><span class="number">03</span><h3>{% translate 'Digitalni marketing' %}</h3></li>
+      <li class="reveal"><span class="number">04</span><h3>{% translate 'Kreativna rešenja' %}</h3></li>
+      <li class="reveal"><span class="number">05</span><h3>{% translate 'In-store promocije' %}</h3></li>
+      <li class="reveal"><span class="number">06</span><h3>{% translate 'Organizacija događaja' %}</h3></li>
+    </ol>
+  </section>
+
+  <div class="bottom-project-cta">
+    <a class="project-link" href="{% url 'website:projekti' %}">{% translate 'POGLEDAJTE PROJEKTE' %} <span aria-hidden="true"><img src="{% static 'img/arrow-up-right.svg' %}" width="26" height="26" alt=""></span></a>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'portal/base_app.html' %}
+
+{% block title %}Dashboard — Luen Pro App{% endblock %}
+{% block topbar_title %}Dashboard{% endblock %}
+
+{% block content %}
+<section class="portal-dashboard">
+    <header class="portal-dashboard__header">
+        <h1>Dobrodošli, {{ user.get_username }}</h1>
+        <p>Upravljajte projektima sa sajta.</p>
+    </header>
+
+    <div class="portal-dashboard__grid">
+        <a class="portal-card portal-card--link" href="{% url 'portal:project_list' %}">
+            <h2>Projekti</h2>
+            <p class="portal-stat">{{ project_count }}</p>
+            <p>Pregled, dodavanje i izmena projekata.</p>
+        </a>
+        <a class="portal-card portal-card--link" href="{% url 'portal:project_list' %}">
+            <h2>Sa engleskim</h2>
+            <p class="portal-stat">{{ with_english }}</p>
+            <p>Projekti koji imaju engleski naziv.</p>
+        </a>
+    </div>
+</section>
+{% endblock %}

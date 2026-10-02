@@ -1,0 +1,288 @@
+[
+  {
+    "id": 19,
+    "title": "ASICS — Iskra Trail",
+    "location": "Kosmaj, Srbija · 2025–2026.",
+    "cover": "img/projects/19-cover.webp",
+    "images": [
+      "img/projects/19-0.webp",
+      "img/projects/19-1.webp",
+      "img/projects/19-2.webp",
+      "img/projects/19-3.webp",
+      "img/projects/19-4.webp",
+      "img/projects/19-5.webp",
+      "img/projects/19-6.webp",
+      "img/projects/19-7.webp"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Ploom Aura — predstavljanje uređaja",
+    "location": "Salon 1905, Beograd · Decembar 2025.",
+    "cover": "img/projects/27-cover.webp",
+    "images": [
+      "img/projects/27-0.webp",
+      "img/projects/27-1.webp",
+      "img/projects/27-2.webp",
+      "img/projects/27-3.webp",
+      "img/projects/27-4.webp"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "ASW — 35 godina",
+    "location": "Radisson Collection Hotel, Beograd · Novembar 2025.",
+    "cover": "img/projects/24-cover.webp",
+    "images": [
+      "img/projects/24-0.webp",
+      "img/projects/24-1.webp",
+      "img/projects/24-2.webp",
+      "img/projects/24-3.webp"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "UniCredit Bank — Wine Garden",
+    "location": "Botanička bašta, Beograd · 2024.",
+    "cover": "img/projects/17-cover.webp",
+    "images": [
+      "img/projects/17-0.webp",
+      "img/projects/17-1.webp",
+      "img/projects/17-2.webp",
+      "img/projects/17-3.webp",
+      "img/projects/17-4.webp"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "ASICS — Austrian Women’s Run",
+    "location": "Beč, Austrija · 2026.",
+    "cover": "img/projects/20-cover.webp",
+    "images": [
+      "img/projects/20-0.webp",
+      "img/projects/20-1.webp",
+      "img/projects/20-2.webp",
+      "img/projects/20-3.webp",
+      "img/projects/20-4.webp",
+      "img/projects/20-5.webp",
+      "img/projects/20-6.webp"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Sobranie Ruby — predstavljanje proizvoda",
+    "location": "St. Regis, Beograd · Novembar 2025.",
+    "cover": "img/projects/29-cover.webp",
+    "images": [
+      "img/projects/29-0.webp",
+      "img/projects/29-1.webp",
+      "img/projects/29-2.webp",
+      "img/projects/29-3.webp",
+      "img/projects/29-4.webp"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Candy Hoover Group — predstavljanje logotipa",
+    "location": "Beograd, Srbija · 2024.",
+    "cover": "img/projects/22-cover.webp",
+    "images": [
+      "img/projects/22-0.webp",
+      "img/projects/22-1.webp",
+      "img/projects/22-2.webp",
+      "img/projects/22-3.webp",
+      "img/projects/22-4.webp"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Sobranie Superior — događaj",
+    "location": "Skoplje, Severna Makedonija · Decembar 2025.",
+    "cover": "img/projects/30-cover.webp",
+    "images": [
+      "img/projects/30-0.webp",
+      "img/projects/30-1.webp",
+      "img/projects/30-2.webp",
+      "img/projects/30-3.webp",
+      "img/projects/30-4.webp"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Ploom — događaji i iskustva",
+    "location": "Srbija · 2024–2026.",
+    "cover": "img/projects/21-cover.webp",
+    "images": [
+      "img/projects/21-0.webp",
+      "img/projects/21-1.webp",
+      "img/projects/21-2.webp",
+      "img/projects/21-3.webp",
+      "img/projects/21-4.webp",
+      "img/projects/21-5.webp",
+      "img/projects/21-6.webp",
+      "img/projects/21-7.webp",
+      "img/projects/21-8.webp"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Ploom — influensersko iskustvo",
+    "location": "Vinarija Panajotović, Beograd · Jun 2025.",
+    "cover": "img/projects/23-cover.webp",
+    "images": [
+      "img/projects/23-0.webp",
+      "img/projects/23-1.webp",
+      "img/projects/23-2.webp",
+      "img/projects/23-3.webp",
+      "img/projects/23-4.webp",
+      "img/projects/23-5.webp"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "JTI — tim bilding programi",
+    "location": "Kopaonik · Jul 2025. / Rafting Tarom, BiH · Jul i avgust 2024.",
+    "cover": "img/projects/28-cover.webp",
+    "images": [
+      "img/projects/28-0.webp",
+      "img/projects/28-1.webp",
+      "img/projects/28-2.webp",
+      "img/projects/28-3.webp"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "JTI Adriatica — tim bilding",
+    "location": "Budva, Crna Gora · Oktobar 2025.",
+    "cover": "img/projects/25-cover.webp",
+    "images": [
+      "img/projects/25-0.webp",
+      "img/projects/25-1.webp",
+      "img/projects/25-2.webp"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "JTI — putovanja za partnere",
+    "location": "Minhen · Oktoberfest 2024. / Barselona · MotoGP Catalunya 2025.",
+    "cover": "img/projects/26-cover.webp",
+    "images": [
+      "img/projects/26-0.webp",
+      "img/projects/26-1.webp",
+      "img/projects/26-2.webp",
+      "img/projects/26-3.webp",
+      "img/projects/26-4.webp"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "ASICS — isprobavanje patika",
+    "location": "32. Novosadski maraton · 2024.",
+    "cover": "img/projects/18-cover.webp",
+    "images": [
+      "img/projects/18-0.webp",
+      "img/projects/18-1.webp",
+      "img/projects/18-2.webp",
+      "img/projects/18-3.webp",
+      "img/projects/18-4.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Freedom Music — zimska aktivacija",
+    "location": "Kopaonik, Srbija · Od 2021.",
+    "cover": "img/projects/8-cover.webp",
+    "images": [
+      "img/projects/8-0.webp",
+      "img/projects/8-1.webp",
+      "img/projects/8-2.webp",
+      "img/projects/8-3.webp"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Sava osiguranje — Ženska trka",
+    "location": "Ada Ciganlija, Beograd · 2022.",
+    "cover": "img/projects/15-cover.webp",
+    "images": [
+      "img/projects/15-0.webp",
+      "img/projects/15-1.webp",
+      "img/projects/15-2.webp"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Sava osiguranje — sajamski štand",
+    "location": "Sajam automobila, Beograd · 2022.",
+    "cover": "img/projects/16-cover.webp",
+    "images": [
+      "img/projects/16-0.webp",
+      "img/projects/16-1.webp",
+      "img/projects/16-2.webp",
+      "img/projects/16-3.webp"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "De si legendo — Pyramid aktivacija",
+    "location": "Beer Fest, Beograd · 2023.",
+    "cover": "img/projects/13-cover.webp",
+    "images": [
+      "img/projects/13-0.webp",
+      "img/projects/13-1.webp"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Camel — mobilno prodajno mesto",
+    "location": "Srbija",
+    "cover": "img/projects/9-cover.webp",
+    "images": [
+      "img/projects/9-0.webp",
+      "img/projects/9-1.webp",
+      "img/projects/9-2.webp"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Sobranie Collection Party",
+    "location": "Beograd, Srbija",
+    "cover": "img/projects/10-cover.webp",
+    "images": [
+      "img/projects/10-0.webp",
+      "img/projects/10-1.webp",
+      "img/projects/10-2.webp",
+      "img/projects/10-3.webp"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Halloween Party",
+    "location": "Hangar, Beograd · Oktobar 2022.",
+    "cover": "img/projects/11-cover.webp",
+    "images": [
+      "img/projects/11-0.webp",
+      "img/projects/11-1.webp",
+      "img/projects/11-2.webp"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Arsenal Fest — mobilno prodajno mesto",
+    "location": "Arsenal Fest",
+    "cover": "img/projects/12-cover.webp",
+    "images": [
+      "img/projects/12-0.webp"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Bojkovčanka — mobilno prodajno mesto",
+    "location": "Festival filmskog scenarija, Vrnjačka Banja · 2023.",
+    "cover": "img/projects/14-cover.webp",
+    "images": [
+      "img/projects/14-0.webp",
+      "img/projects/14-1.webp"
+    ]
+  }
+]

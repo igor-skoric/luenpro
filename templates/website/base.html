@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#efece6">
+  <meta name="description" content="{% block meta_description %}Zajednica umova zaljubljenih u marketing. Svakom klijentu pristupamo pojedinačno, pažljivo i maksimalno fokusirano.{% endblock %}">
+  <title>{% block title %}Luen Pro | Kreativna marketing agencija{% endblock %}</title>
+  <link rel="preload" href="{% static 'fonts/cal-sans.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'css/website.css' %}">
+  <script>
+    try {
+      if (sessionStorage.getItem('luen-intro') || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('intro-seen');
+      } else {
+        document.documentElement.classList.add('is-intro');
+      }
+    } catch (e) {}
+  </script>
+  <script src="{% static 'js/website.js' %}" defer></script>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+{% include 'website/includes/loader.html' %}
+{% block body_start %}{% endblock %}
+{% include 'website/includes/header.html' %}
+{% block content %}{% endblock %}
+{% include 'website/includes/footer.html' %}
+{% block body_end %}{% endblock %}
+</body>
+</html>

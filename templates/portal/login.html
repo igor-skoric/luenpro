@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% translate 'Prijava — Luen Pro' %}{% endblock %}
+
+{% block body_class %}page-portal{% endblock %}
+
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portal.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="portal-auth">
+        <div class="portal-auth__card">
+            <div class="portal-auth__brand">
+                <img src="{% static 'img/logo.png' %}" width="940" height="220" alt="Luen Pro">
+            </div>
+            <h1>{% translate 'Prijava' %}</h1>
+            <p class="portal-auth__subtitle">{% translate 'Luen Pro aplikacija' %}</p>
+
+            {% if error %}
+                <p class="portal-auth__error" role="alert">{{ error }}</p>
+            {% endif %}
+
+            <form method="post" class="portal-auth__form">
+                {% csrf_token %}
+                <label>
+                    {% translate 'Korisničko ime' %}
+                    <input type="text" name="username" required autofocus autocomplete="username">
+                </label>
+                <label>
+                    {% translate 'Lozinka' %}
+                    <input type="password" name="password" required autocomplete="current-password">
+                </label>
+                <button type="submit" class="btn btn--primary btn--block">{% translate 'Prijavi se' %}</button>
+            </form>
+
+            <p class="portal-auth__back">
+                <a href="{% url 'website:home' %}">&larr; {% translate 'Nazad na sajt' %}</a>
+            </p>
+        </div>
+    </section>
+{% endblock %}

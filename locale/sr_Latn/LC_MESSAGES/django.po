@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-29 17:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: .\apps\portal\views.py:22
+msgid "Pogrešno korisničko ime ili lozinka."
+msgstr ""
+
+#: .\templates\portal\login.html:4
+msgid "Prijava — Luen Pro"
+msgstr ""
+
+#: .\templates\portal\login.html:14
+msgid "Prijava"
+msgstr ""
+
+#: .\templates\portal\login.html:15
+msgid "Luen Pro aplikacija"
+msgstr ""
+
+#: .\templates\portal\login.html:24
+msgid "Korisničko ime"
+msgstr ""
+
+#: .\templates\portal\login.html:28
+msgid "Lozinka"
+msgstr ""
+
+#: .\templates\portal\login.html:31
+msgid "Prijavi se"
+msgstr ""
+
+#: .\templates\portal\login.html:35
+msgid "Nazad na sajt"
+msgstr ""
+
+#: .\templates\website\home.html:4
+msgid "Luen Pro | Kreativna marketing agencija"
+msgstr ""
+
+#: .\templates\website\home.html:21 .\templates\website\home.html:76
+msgid "POGLEDAJTE PROJEKTE"
+msgstr ""
+
+#: .\templates\website\home.html:24
+msgid "Klijenti"
+msgstr ""
+
+#: .\templates\website\includes\header.html:3
+msgid "Luen Pro — naslovna strana"
+msgstr ""
+
+#: .\templates\website\includes\header.html:7
+msgid "Glavna navigacija"
+msgstr ""
+
+#: .\templates\website\includes\header.html:8
+msgid "O nama"
+msgstr ""
+
+#: .\templates\website\includes\header.html:9
+msgid "Projekti"
+msgstr ""
+
+#: .\templates\website\includes\header.html:10
+msgid "Usluge"
+msgstr ""
+
+#: .\templates\website\includes\header.html:12
+msgid "Izbor jezika"
+msgstr ""
+
+#: .\templates\website\projekti.html:4
+msgid "Projekti | Luen Pro"
+msgstr ""
+
+#: .\templates\website\projekti.html:10
+msgid "SELEKTOVANI PROJEKTI"
+msgstr ""
+
+#: .\templates\website\projekti.html:11
+msgid "PROJEKTI KOJI<br>OSTAVLJAJU <span>UTISAK</span>"
+msgstr ""
+
+#: .\templates\website\projekti.html:16
+#, python-format
+msgid "Otvori galeriju: %(title)s"
+msgstr ""
+
+#: .\templates\website\projekti.html:36
+msgid "Zatvori galeriju"
+msgstr ""
+
+#: .\templates\website\projekti.html:39
+msgid "Prethodna fotografija"
+msgstr ""
+
+#: .\templates\website\projekti.html:41
+msgid "Sledeća fotografija"
+msgstr ""
+
+#: .\templates\website\projekti.html:30
+msgid "Fotografija"
+msgstr ""
+
+#: .\templates\website\projekti.html:44
+msgid "Ostale fotografije"
+msgstr ""
+
+#: .\templates\website\includes\loader.html
+msgid "Učitavanje"
+msgstr ""
+
+msgid "ORGANIZACIJE DOGAĐAJA"
+msgstr ""
+
+msgid "IN STORE PROMOCIJE"
+msgstr ""
+
+msgid "KREATIVNA REŠENJA"
+msgstr ""
+
+msgid "DIGITALNI MARKETING"
+msgstr ""
+
+msgid "PRODUKCIJA"
+msgstr ""
+
+#: .\templates\website\projekti.html
+msgid "Stranice projekata"
+msgstr ""
+
+msgid "Prethodna strana"
+msgstr ""
+
+msgid "Sledeća strana"
+msgstr ""

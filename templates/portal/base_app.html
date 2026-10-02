@@ -1,0 +1,71 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'sr-latn' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Luen Pro App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/portal.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="page-portal page-portal-app">
+    <div class="app-shell">
+        <aside class="app-sidebar" id="app-sidebar">
+            <div class="app-sidebar__brand">
+                <a href="{% url 'portal:dashboard' %}" aria-label="Luen Pro App">
+                    <img class="app-sidebar__logo" src="{% static 'img/logo.png' %}" width="940" height="220" alt="Luen Pro">
+                </a>
+                <span class="app-sidebar__badge">App</span>
+            </div>
+            <nav class="app-sidebar__nav" aria-label="App navigacija">
+                <a href="{% url 'portal:dashboard' %}" class="app-nav__link{% if request.resolver_match.url_name == 'dashboard' %} is-active{% endif %}">
+                    Dashboard
+                </a>
+                <a href="{% url 'portal:project_list' %}" class="app-nav__link{% if 'project' in request.resolver_match.url_name %} is-active{% endif %}">
+                    Projekti
+                </a>
+            </nav>
+            <div class="app-sidebar__footer">
+                <p class="app-sidebar__user">{{ user.get_username }}</p>
+                <a href="{% url 'website:home' %}" class="app-nav__link app-nav__link--muted">Sajt</a>
+                <a href="{% url 'portal:logout' %}" class="app-nav__link app-nav__link--muted">Odjava</a>
+            </div>
+        </aside>
+
+        <div class="app-main">
+            <header class="app-topbar">
+                <button type="button" class="app-topbar__menu" id="sidebar-toggle" aria-controls="app-sidebar" aria-expanded="false">
+                    Meni
+                </button>
+                <div class="app-topbar__title">{% block topbar_title %}Dashboard{% endblock %}</div>
+            </header>
+
+            {% if messages %}
+                <ul class="app-messages">
+                    {% for message in messages %}
+                        <li class="app-messages__item app-messages__item--{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <div class="app-content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+      (() => {
+        const btn = document.getElementById('sidebar-toggle');
+        const shell = document.querySelector('.app-shell');
+        if (!btn || !shell) return;
+        btn.addEventListener('click', () => {
+          const open = shell.classList.toggle('is-sidebar-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      })();
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

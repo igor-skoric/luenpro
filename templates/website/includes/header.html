@@ -1,0 +1,19 @@
+{% load static i18n %}
+<header class="header">
+  <a class="brand" href="{% url 'website:home' %}" aria-label="{% translate 'Luen Pro — naslovna strana' %}">
+    <img src="{% static 'img/logo.png' %}" width="940" height="220" alt="Luen Pro — Creative, Production, Event">
+  </a>
+  <div class="header-actions">
+    <nav aria-label="{% translate 'Glavna navigacija' %}">
+      <a href="{% url 'website:home' %}#o-nama">{% translate 'O nama' %}</a>
+      <a href="{% url 'website:projekti' %}"{% if request.resolver_match.url_name == 'projekti' %} aria-current="page"{% endif %}>{% translate 'Projekti' %}</a>
+      <a href="{% url 'website:home' %}#usluge">{% translate 'Usluge' %}</a>
+    </nav>
+    <form action="{% url 'set_language' %}" method="post" class="lang-switch" aria-label="{% translate 'Izbor jezika' %}">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <button type="submit" name="language" value="sr-latn" class="lang-switch__btn{% if LANGUAGE_CODE == 'sr-latn' %} is-active{% endif %}"{% if LANGUAGE_CODE == 'sr-latn' %} aria-current="true"{% endif %}>SR</button>
+      <button type="submit" name="language" value="en" class="lang-switch__btn{% if LANGUAGE_CODE == 'en' %} is-active{% endif %}"{% if LANGUAGE_CODE == 'en' %} aria-current="true"{% endif %}>EN</button>
+    </form>
+  </div>
+</header>
